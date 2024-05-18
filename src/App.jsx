@@ -22,13 +22,13 @@ function App() {
     formType: null,
   });
 
-  // const { patients } = useSelector((state) => state.patients);
-  // const { wards } = useSelector((state) => state.wards);
+  const { patients } = useSelector((state) => state.patients);
+  const { wards } = useSelector((state) => state.wards);
 
   useEffect(() => {
     dispatch(fetchPatients());
     dispatch(fetchWards());
-  }, [dispatch]);
+  }, [dispatch, wards, patients]);
 
   return (
     <>
